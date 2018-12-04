@@ -7,10 +7,11 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Scope;
 
 import com.example.component.Color;
+import com.example.component.MyBeanPostProcessor;
 import com.example.factory.MyFactory;
 
-
-//@ComponentScan(value = "com.example.*")
+/*为啥这样扫描不到MyBeanPostProcessor类呢？？？？    @ComponentScan(value = "com.example.component.*")*/
+/*@ComponentScan(value = "com.example.component")*/
 @Configuration
 @Import({MyImportSelector.class,MyImportBeanDefinitionRegister.class})
 public class Annotation1 {
@@ -36,9 +37,10 @@ public class Annotation1 {
 	 * 但是如果为prototype，ioc才不会管一个prototype bean的死活了，因为太多了，不可能跟踪每一个新创建的bean是在何时被销毁的
 	 * 
 	 */
-	@Scope("prototype")
+	//@Scope("prototype")
 	@Bean(value = {"yz1"},initMethod = "init",destroyMethod="destory")
 	public Color color(){
+		System.out.println("=====(1)color====");
 		return new Color();
 	}
 	
@@ -62,5 +64,16 @@ public class Annotation1 {
 	 * 学会正确的解读javadoc
 	 * 学会看debug的调用栈
 	 */
+	
+	
+	/**
+	 * 我他妈想说spring context event那些bean为啥不进处理器
+	 * {@link} http://blog.51cto.com/4247649/2118350
+	 * @return
+	 */
+	@Bean
+	public MyBeanPostProcessor myBeanPostProcessor(){
+		return new MyBeanPostProcessor();
+	}
 	
 }

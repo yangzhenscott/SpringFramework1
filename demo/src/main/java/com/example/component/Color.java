@@ -10,15 +10,15 @@ public class Color {
 	}
 	
 	public Color(){
-		System.out.println("Color空构造函数初始化=======");
+		System.out.println("(2)Color空构造函数初始化=======");
 	}
 	
 	public void init(){
-		System.out.println("Color========init=======");
+		System.out.println("(3)Color========init=======");
 	}
 	
 	public void destory(){
-		System.out.println("Color========destory=======");
+		System.out.println("(4)Color========destory=======");
 
 	}
 	
