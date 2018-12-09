@@ -8,10 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.properties.InBean;
 
+/**
+ * 默认注入有个组件id为类名首字母小写到ioc容器中
+ * @author yangZhen
+ *
+ */
 @RestController
 public class HelloController {
 
-	@Value("${hello}")
+	/*@Value("${hello}")
 	private String hello;
 	
 	@Resource
@@ -23,5 +28,5 @@ public class HelloController {
 				+inBean.getDburl()+"<br/>"
 						+inBean.getDriver()+"<br/>"
 								+inBean.getPass()+"<br/>";
-	}
+	}*/
 }
