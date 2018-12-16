@@ -9,11 +9,19 @@
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
    <context:annotation-config/>
+   <context:property-placeholder location="classpath:/configration.properties"/>
 
-   <bean id="helloWorld" 
+   <!-- <bean id="helloWorld" 
        class="com.yiibai.HelloWorld"
        init-method="init" destroy-method="destroy">
        <property name="message" value="Hello World!"/>
+   </bean> -->
+   
+   <!-- 通过	public ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:/beans.xml"); -->
+   <!-- 读取xml，加载spring的ioc容器 -->
+   <!-- 当xml配置文件中设置property值，有限读取配置文件的属性值 ，存在优先级的-->
+   <bean id="instanceName"  class="com.example.bean.Reader" scope="prototype">
+      <property name="hip" value="${hip}"></property>
    </bean>
 
 </beans>
