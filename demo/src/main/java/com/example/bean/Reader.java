@@ -3,7 +3,7 @@ package com.example.bean;
 import org.springframework.beans.factory.annotation.Value;
 
 public class Reader {
-	@Value("honeyName")
+	@Value("${honeyName}")
 	private String name;
 
 	@Value("80")

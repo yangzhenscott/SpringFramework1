@@ -13,6 +13,8 @@ public class TestMainConfigOfMainProperty {
 
 	public AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(MainConfigOfPropertyValues.class);
 	public ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/beans.xml");
+	
+	@Test
 	public void test(){
 		printBean();
 		Reader Reader2018 = (Reader) annotationConfigApplicationContext.getBean("Reader2018");

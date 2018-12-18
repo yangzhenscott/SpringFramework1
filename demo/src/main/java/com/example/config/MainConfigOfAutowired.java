@@ -8,9 +8,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 import com.example.dao.BookDao;
+import com.example.dao.BookDaoResource_Parameter;
 
 /**
- * @autowired 自动注入
+ * {@Autowired} 自动注入
  * spring利用依赖注入DI，完成对ioc容器中各个组件所需要的依赖进行赋值初始化，完成组件间的解耦工作
  * （1）默认根据类型装配，===>applicationContext.getBean(BookDao.class) 在ioc中找到BookDao类型的bean进行注入
  * (2)DI的时候，发现多个bean是相同类型的，===>applicationContext.getBean("bookDao2"),则把属性名作为beanid去ioc中寻找这个bean
@@ -28,10 +29,15 @@ public class MainConfigOfAutowired {
 	/**
 	 * (1){@Bean}如果没有设置默认的value属性，则把方法名作为beanid:bookDao2去isc中注册这个bean
 	 * (2){@Bean("bookYang")} 指定注册beanid为bookYang
+	 * ************
+	 * 直接在{@Bean}标注的方法参数中加上注解，注入bean，就是默认从ioc中获取【此时@Autowired可以省略】
+	 * ************
 	 */
 	@Bean
 	@Primary
-	public BookDao bookDao2(){
+	public BookDao bookDao2(@Autowired BookDaoResource_Parameter bookDaoResource_Parameter){
+		System.out.println("通过参数前加入autowired注解完成自动注入工作注bookDaoResource_Parameter:"+bookDaoResource_Parameter);
+		System.out.println(bookDaoResource_Parameter.hashCode());
 		BookDao bookDao = new BookDao();
 		bookDao.setAttr("BookDaoAttr2");
 		return bookDao;
