@@ -29,7 +29,11 @@ public class TestMainConfigOfMainProperty {
 		System.out.println(Reader2018);
 	}
 	
-	private void printBean() {
+	/**
+	 * test方法必须是public修饰
+	 */
+	@Test
+	public void printBean() {
 		String[] benaNames = annotationConfigApplicationContext.getBeanDefinitionNames();
 		for(String benaName : benaNames){
 			System.out.println(benaName);

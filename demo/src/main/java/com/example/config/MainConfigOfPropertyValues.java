@@ -17,7 +17,7 @@ import com.example.bean.Reader;
  */
 @PropertySource(value={"classpath:/configration.properties"})
 @Configuration
-@ComponentScan({"com.example.web"})
+@ComponentScan({"com.example.web","com.example.aware"})
 public class MainConfigOfPropertyValues {
 
 	@Bean(value="Reader2018")

@@ -23,7 +23,7 @@ import com.example.dao.BookDaoResource_Parameter;
  * @author yangZhen
  */
 @Configuration
-@ComponentScan({"com.example.controller","com.example.dao","com.example.service"})
+@ComponentScan({"com.example.controller","com.example.dao","com.example.service","com.example.aware"})
 public class MainConfigOfAutowired {
 	
 	/**
