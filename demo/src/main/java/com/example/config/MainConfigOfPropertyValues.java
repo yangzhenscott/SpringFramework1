@@ -1,5 +1,8 @@
 package com.example.config;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -20,9 +23,67 @@ import com.example.bean.Reader;
 @ComponentScan({"com.example.web","com.example.aware"})
 public class MainConfigOfPropertyValues {
 
+	private Character str;
+	
+	private char number;
+	
+	
+	
+
+	public Character getStr() {
+		return str;
+	}
+
+	public void setStr(Character str) {
+		this.str = str;
+	}
+
+	public char getNumber() {
+		return number;
+	}
+
+	public void setNumber(char number) {
+		this.number = number;
+	}
+
 	@Bean(value="Reader2018")
 	public Reader reader(){
 		return new Reader();
+	}
+	
+	public static void main(String[] args) {
+		Integer a=127;
+		Integer a1=127;
+		Integer a2=new Integer(127);
+		System.out.println(a==a1);
+		System.out.println(a2==a1);
+		
+		Integer b=128;
+		Integer b1=128;
+		Integer b2=new Integer(128);
+		System.out.println(b==b1);
+		System.out.println(b2==b1);
+		
+		MainConfigOfPropertyValues obj=new MainConfigOfPropertyValues();
+		System.out.println(obj.str);
+		System.out.println(obj.number);
+		String[] arr=new String[]{"ss"};
+		//System.out.println(arr[1]);
+		int[] arr1 = new int[2];
+		int[] arr3 = {};
+		
+		List<String> list=new ArrayList<String>();
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		for(String str : list){
+			if("3".equals(str)){
+				list.remove(str);
+			}
+		}
+		System.out.println(list.toString());
+		
+		
 	}
 	
 }
