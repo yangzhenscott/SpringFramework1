@@ -2,6 +2,8 @@ package com.example.config;
 
 
 import java.beans.PropertyVetoException;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Value;
@@ -74,4 +76,5 @@ public class MainConfigOfProfile implements EmbeddedValueResolverAware{
 		// TODO Auto-generated method stub
 		this.dbUrl = resolver.resolveStringValue("${db.url}");
 	}
+
 }
