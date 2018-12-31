@@ -6,7 +6,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.example.component.Color;
 
-
 public class Ioc {
 
 	//对象属性在声明时，就需要调用构造函数，完成容器的初始化工作了

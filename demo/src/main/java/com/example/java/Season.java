@@ -4,6 +4,7 @@ public class Season {
 	
 	public static void main(String[] args) {
 		System.out.println(MySeason.AUTUMN.getSeasonName());
+				
 	}
 
 }

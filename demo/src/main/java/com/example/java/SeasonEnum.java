@@ -7,6 +7,7 @@ public class SeasonEnum {
 		System.out.println(str);
 		Broadcast obj = MySeasonEnum.SUMMER;
 		obj.say();
+		System.out.println(MySeasonEnum.SUMMER.getSeasonName()+":"+MySeasonEnum.SPRING.getSeasonDesc());
 	}
 }
 
@@ -46,7 +47,9 @@ enum MySeasonEnum implements Broadcast{
 	/*AUTUMN("autumn", "秋天"),
 	WINTER("winter", "冬天");*/
 	
-	
+	/**
+	 * final属性，声明时初始化或者在构造函数中初始化，否则编译器报错
+	 */
 	private final String seasonName;
 	private final String seasonDesc;
 	
