@@ -52,7 +52,11 @@ class MyProxy{
 		return Proxy.newProxyInstance(realObj.getClass().getClassLoader(), realObj.getClass().getInterfaces(), new MyInvocationHandler(realObj));
 	}
 }
-
+/**
+ * the core of proxy desgin pattern is lossely-coupled(松耦合)
+ * @author yangZhen
+ *
+ */
 public class TestProxy {
      public static void main(String[] args) {
     	 RealSubject realSubject = new RealSubject();
